@@ -16,7 +16,7 @@ const Contact = () => {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="mt-8 grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]"
       >
-        <p className="text-sm text-foreground-light/70 dark:text-foreground-dark/70">
+        <p className="text-sm text-gray-700 dark:text-foreground-dark/70">
           I&apos;m always open to interesting problems, collaborations, and
           engineering conversations. The fastest way to reach me is via email or
           LinkedIn.
@@ -26,7 +26,7 @@ const Contact = () => {
             href={profile.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-foreground-light/80 transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark/80"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-xs uppercase tracking-[0.18em] text-gray-800 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark/80"
           >
             <Github className="h-4 w-4" />
             GitHub
@@ -35,14 +35,14 @@ const Contact = () => {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-foreground-light/80 transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark/80"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-xs uppercase tracking-[0.18em] text-gray-800 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark/80"
           >
             <Linkedin className="h-4 w-4" />
             LinkedIn
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-foreground-light/80 transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark/80"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-xs uppercase tracking-[0.18em] text-gray-800 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark/80"
           >
             <Mail className="h-4 w-4" />
             Email

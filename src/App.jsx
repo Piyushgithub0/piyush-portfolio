@@ -26,7 +26,7 @@ function App() {
   const activeSection = useActiveSection(sectionIds)
 
   return (
-    <div className="min-h-screen bg-background-dark text-foreground-dark">
+    <div className="min-h-screen bg-[#f5f5f7] text-gray-800 dark:bg-background-dark dark:text-foreground-dark">
       <Navbar activeSection={activeSection} />
       <main className="pt-16">
         <Hero />

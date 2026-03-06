@@ -42,19 +42,19 @@ const Chatbot = () => {
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-4 z-40 w-[min(22rem,90vw)] rounded-2xl border border-white/10 bg-background-dark/95 text-foreground-dark shadow-[0_0_40px_rgba(0,0,0,0.6)] backdrop-blur md:bottom-28 md:right-8">
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+        <div className="fixed bottom-24 right-4 z-40 w-[min(22rem,90vw)] rounded-2xl border border-gray-200 bg-white/95 text-gray-900 shadow-[0_0_40px_rgba(15,23,42,0.35)] backdrop-blur dark:border-white/10 dark:bg-background-dark/95 dark:text-foreground-dark md:bottom-28 md:right-8">
+          <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3 dark:border-white/10">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em]">
                 Portfolio Assistant
               </p>
-              <p className="mt-0.5 text-[11px] text-foreground-dark/60">
+              <p className="mt-0.5 text-[11px] text-gray-500 dark:text-foreground-dark/60">
                 Scripted responses from local JSON
               </p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="rounded-full p-1 text-foreground-dark/60 hover:bg-white/10"
+              className="rounded-full p-1 text-gray-500 hover:bg-gray-100 dark:text-foreground-dark/60 dark:hover:bg-white/10"
               aria-label="Close chat"
             >
               <X className="h-4 w-4" />
@@ -72,8 +72,8 @@ const Chatbot = () => {
                 <div
                   className={`max-w-[80%] rounded-2xl px-3 py-2 ${
                     m.from === 'user'
-                      ? 'bg-accent-blue text-background-dark'
-                      : 'bg-white/5 text-foreground-dark'
+                      ? 'bg-accent-blue text-white'
+                      : 'bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-foreground-dark'
                   }`}
                 >
                   {m.text}
@@ -84,13 +84,13 @@ const Chatbot = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="flex items-center gap-2 border-t border-white/10 px-3 py-2"
+            className="flex items-center gap-2 border-t border-gray-200 px-3 py-2 dark:border-white/10"
           >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask something..."
-              className="flex-1 bg-transparent text-xs text-foreground-dark placeholder:text-foreground-dark/50 focus:outline-none"
+              className="flex-1 bg-transparent text-xs text-gray-900 placeholder:text-gray-400 focus:outline-none dark:text-foreground-dark dark:placeholder:text-foreground-dark/50"
             />
             <button
               type="submit"

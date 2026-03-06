@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-background-dark via-background-dark to-background-light px-4 pt-24 text-foreground-dark dark:from-background-dark dark:via-[#050505] dark:to-background-dark sm:px-6 lg:px-0"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#f5f5f7] via-white to-[#f0f2f5] px-4 pt-24 text-gray-900 dark:from-background-dark dark:via-[#050505] dark:to-background-dark dark:text-foreground-dark sm:px-6 lg:px-0"
     >
       <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-screen dark:opacity-70">
         <div className="pointer-events-none absolute -left-32 top-40 h-64 w-64 rounded-full bg-accent-blue/20 blur-3xl" />

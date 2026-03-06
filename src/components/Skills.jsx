@@ -20,16 +20,16 @@ const Skills = () => {
             key={cat.name}
             whileHover={{ y: -4 }}
             transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-            className="rounded-2xl border border-white/10 bg-background-light/80 p-4 text-foreground-light backdrop-blur dark:bg-background-dark/80 dark:text-foreground-dark"
+            className="rounded-2xl border border-gray-200 bg-white/80 p-4 text-gray-800 backdrop-blur dark:border-white/10 dark:bg-background-dark/80 dark:text-foreground-dark"
           >
-            <p className="text-xs uppercase tracking-[0.25em] text-foreground-light/60 dark:text-foreground-dark/60">
+            <p className="text-xs uppercase tracking-[0.25em] text-gray-600 dark:text-foreground-dark/60">
               {cat.name}
             </p>
-            <div className="mt-3 flex flex-wrap gap-2 text-xs text-foreground-light/80 dark:text-foreground-dark/80">
+            <div className="mt-3 flex flex-wrap gap-2 text-xs text-gray-800 dark:text-foreground-dark/80">
               {cat.items.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-white/5 px-3 py-1 text-[11px]"
+                  className="rounded-full bg-gray-100 px-3 py-1 text-[11px] dark:bg-white/5"
                 >
                   {item}
                 </span>

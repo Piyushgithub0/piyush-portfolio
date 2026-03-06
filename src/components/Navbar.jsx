@@ -24,7 +24,7 @@ export const Navbar = ({ activeSection }) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-background-light/60 backdrop-blur dark:bg-background-dark/60">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-gray-200 bg-[#f7f7fa]/80 backdrop-blur dark:border-white/5 dark:bg-background-dark/60">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-0">
         <div
           className="flex cursor-pointer items-center gap-2"
@@ -42,7 +42,7 @@ export const Navbar = ({ activeSection }) => {
         </div>
 
         <div className="hidden items-center gap-6 md:flex">
-          <ul className="flex items-center gap-4 text-xs font-medium uppercase tracking-[0.25em] text-foreground-light/60 dark:text-foreground-dark/50">
+          <ul className="flex items-center gap-4 text-xs font-medium uppercase tracking-[0.25em] text-gray-600 dark:text-foreground-dark/50">
             {navItems.map((item) => (
               <li key={item.id}>
                 <button
@@ -53,7 +53,7 @@ export const Navbar = ({ activeSection }) => {
                     className={
                       activeSection === item.id
                         ? 'text-accent-blue'
-                        : 'hover:text-foreground-light dark:hover:text-foreground-dark'
+                        : 'hover:text-gray-900 dark:hover:text-foreground-dark'
                     }
                   >
                     {item.label}
@@ -72,7 +72,7 @@ export const Navbar = ({ activeSection }) => {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-background-light/80 text-foreground-light shadow-sm transition-colors hover:border-accent-blue hover:text-accent-blue dark:bg-background-dark/80 dark:text-foreground-dark"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:bg-background-dark/80 dark:text-foreground-dark"
               aria-label="Toggle color theme"
             >
               {theme === 'dark' ? (
@@ -85,7 +85,7 @@ export const Navbar = ({ activeSection }) => {
               href={profile.github}
               target="_blank"
               rel="noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-foreground-light transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark"
             >
               <Github className="h-4 w-4" />
             </a>
@@ -93,7 +93,7 @@ export const Navbar = ({ activeSection }) => {
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-foreground-light transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark"
             >
               <Linkedin className="h-4 w-4" />
             </a>
