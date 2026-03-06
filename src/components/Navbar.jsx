@@ -2,7 +2,7 @@ import { useTheme } from '../ThemeContext'
 import profile from '../data/profile.json'
 import { Moon, Sun, Github, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
-import profileImg from "../assets/profile.jpeg"
+import profileImg from "../assets/profile.jpg"
 
 const navItems = [
   { id: 'hero', label: 'Home' },

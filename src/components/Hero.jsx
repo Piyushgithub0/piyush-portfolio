@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import profile from '../data/profile.json'
-import profileImg from "../assets/profile.jpeg"
+import profileImg from "../assets/profile.jpg"
 
 export const Hero = () => {
   const handleScrollToProjects = () => {
     const el = document.getElementById('projects')
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
+
 
   return (
     <section
