@@ -2,16 +2,16 @@ import { motion } from 'framer-motion'
 
 const education = [
   {
-    title: 'B.Tech in Computer Science',
-    institution: 'Institute of Technology',
-    period: '2020 – 2024',
-    detail: 'Focused on software engineering, systems design, and applied machine learning.',
+    title: 'B.Tech in Information Technology',
+    institution: 'A. P.Shah Institute of Technology',
+    period: '2025 – 2028',
+    detail: 'Focused on software engineering, systems design, 3D development, VFX development, and AI development.',
   },
   {
-    title: 'High School',
-    institution: 'Science & Mathematics Track',
-    period: '2018 – 2020',
-    detail: 'Strong foundation in mathematics, physics, and problem solving.',
+    title: 'Diploma in Information Technology',
+    institution: 'Muchhala Polytechnic',
+    period: '2022 – 2025',
+    detail: 'Strong foundation in computer science, programming, AI, and problem solving.',
   },
 ]
 
