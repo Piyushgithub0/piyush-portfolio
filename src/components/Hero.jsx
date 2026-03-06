@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import profile from '../data/profile.json'
-import profileImg from "../assets/profile.jpg"
+import profileImg from "../assets/profile.jpeg"
 
 export const Hero = () => {
   const handleScrollToProjects = () => {
