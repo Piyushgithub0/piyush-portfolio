@@ -4,6 +4,7 @@ import { Moon, Sun, Github, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import profileImg from "../assets/profile.jpeg"
 
+
 const navItems = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
