@@ -2,6 +2,7 @@ import { useTheme } from '../ThemeContext'
 import profile from '../data/profile.json'
 import { Moon, Sun, Github, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
+import profileImg from "../assets/profile.jpeg"
 
 const navItems = [
   { id: 'hero', label: 'Home' },
@@ -30,7 +31,13 @@ export const Navbar = ({ activeSection }) => {
           className="flex cursor-pointer items-center gap-2"
           onClick={() => scrollToSection('hero')}
         >
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-accent-blue to-accent-red shadow-lg shadow-accent-blue/40" />
+         <div className="p-[2px] rounded-full bg-gradient-to-br from-accent-blue to-accent-red">
+        <img
+              src={profileImg}
+              alt="Piyush"
+              className="h-8 w-8 rounded-full object-cover"
+            />
+          </div>
           <div className="flex flex-col">
             <span className="font-display text-sm font-semibold tracking-[0.2em] uppercase text-accent-blue">
               Portfolio

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import profile from '../data/profile.json'
+import profileImg from "../assets/profile.jpeg"
 
 export const Hero = () => {
   const handleScrollToProjects = () => {
@@ -76,7 +77,13 @@ export const Hero = () => {
                     {profile.name}
                   </p>
                 </div>
-                <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-accent-blue to-accent-red opacity-90" />
+                <div className="h-40 w-40 rounded-full overflow-hidden border-4 border-white/10">
+                  <img
+                    src={profileImg}
+                    alt="Piyush"
+                    className="h-full w-full object-cover"
+                     />
+                </div>
               </div>
               <div className="mt-6 space-y-3 text-xs text-foreground-light/70 dark:text-foreground-dark/70">
                 <p>{profile.bio}</p>
