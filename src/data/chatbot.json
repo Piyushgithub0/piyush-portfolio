@@ -1,0 +1,19 @@
+{
+  "//": "Update chatbot questions and answers here. Keys should be lowercase for simple matching.",
+  "faqs": [
+    {
+      "question": "who are you",
+      "answer": "I’m a software engineer focused on modern web platforms, developer experience, and AI-assisted tooling."
+    },
+    {
+      "question": "what projects have you built",
+      "answer": "I’ve built production-grade dashboards, ML experiment pipelines, and design systems. Check the Projects section for a curated selection."
+    },
+    {
+      "question": "what technologies do you use",
+      "answer": "On the frontend I use React, Vite, Tailwind, and Framer Motion. On the backend I enjoy Node.js, Python, FastAPI, and cloud-native tooling."
+    }
+  ],
+  "fallback": "I don’t have a scripted answer for that yet, but I’d be happy to discuss it in person. Reach out via email or LinkedIn from the Contact section."
+}
+

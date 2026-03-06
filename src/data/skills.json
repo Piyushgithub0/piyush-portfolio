@@ -1,0 +1,22 @@
+{
+  "//": "Update skills and categories here.",
+  "categories": [
+    {
+      "name": "Languages",
+      "items": ["TypeScript", "JavaScript", "Python", "C++"]
+    },
+    {
+      "name": "Frontend",
+      "items": ["React", "Vite", "Next.js", "Tailwind CSS", "Framer Motion"]
+    },
+    {
+      "name": "Backend & DevOps",
+      "items": ["Node.js", "FastAPI", "PostgreSQL", "Docker", "CI/CD"]
+    },
+    {
+      "name": "AI & Experiments",
+      "items": ["Mistral", "LangChain", "Vector Databases", "RAG Systems"]
+    }
+  ]
+}
+

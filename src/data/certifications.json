@@ -1,0 +1,24 @@
+{
+  "//": "Update certifications, hackathons, and workshops here.",
+  "items": [
+    {
+      "title": "Global AI Hackathon",
+      "issuer": "OpenAI / Community",
+      "year": "2025",
+      "description": "Built an AI-powered developer assistant that integrated directly into CI pipelines."
+    },
+    {
+      "title": "Advanced React Patterns",
+      "issuer": "Frontend Masters",
+      "year": "2024",
+      "description": "Deep dive into modern React architecture, performance, and DX."
+    },
+    {
+      "title": "Cloud-Native Application Design",
+      "issuer": "Google Cloud",
+      "year": "2023",
+      "description": "Hands-on course covering containerized microservices and production reliability."
+    }
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "//": "Update project cards here: title, description, technologies, links.",
+  "projects": [
+    {
+      "id": "control-center",
+      "title": "Developer Control Center",
+      "description": "A unified dashboard for monitoring builds, deployments, and observability in real time.",
+      "technologies": ["React", "Vite", "Tailwind", "TypeScript"],
+      "github": "https://github.com/your-username/dev-control-center",
+      "demo": "https://dev-control-center.vercel.app"
+    },
+    {
+      "id": "ml-pipeline",
+      "title": "ML Experiment Pipeline",
+      "description": "Modular pipeline for training, tracking, and visualizing machine learning experiments.",
+      "technologies": ["Python", "FastAPI", "PostgreSQL"],
+      "github": "https://github.com/your-username/ml-pipeline",
+      "demo": "https://ml-pipeline-demo.vercel.app"
+    },
+    {
+      "id": "design-system",
+      "title": "Futuristic Design System",
+      "description": "A Tesla-inspired component library with motion primitives and dark/light theming.",
+      "technologies": ["React", "Framer Motion", "Storybook"],
+      "github": "https://github.com/your-username/futuristic-design-system",
+      "demo": "https://futuristic-design-system.vercel.app"
+    }
+  ]
+}
+
