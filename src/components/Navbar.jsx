@@ -1,6 +1,6 @@
 import { useTheme } from '../ThemeContext'
 import profile from '../data/profile.json'
-import { Moon, Sun, Github, Linkedin } from 'lucide-react'
+import { Moon, Sun, Github, Linkedin, Droplets } from 'lucide-react'
 import { motion } from 'framer-motion'
 import profileImg from "../assets/profile.jpg"
 
@@ -22,7 +22,7 @@ const scrollToSection = (id) => {
 }
 
 export const Navbar = ({ activeSection }) => {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, toggleTheme, setTheme } = useTheme()
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 light-glass dark:bg-background-dark/60">
@@ -87,6 +87,17 @@ export const Navbar = ({ activeSection }) => {
               ) : (
                 <Moon className="h-4 w-4" />
               )}
+            </button>
+            <button
+              onClick={() => setTheme('ocean')}
+              className={`flex h-9 w-9 items-center justify-center rounded-full border transition-colors ${theme === 'ocean'
+                ? 'border-accent-blue bg-accent-blue/10 text-accent-blue'
+                : 'border-white/10 text-foreground-light/70 hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark/70'
+                }`}
+              aria-label="Activate Ocean Theme"
+              title="Ocean Theme"
+            >
+              <Droplets className="h-4 w-4" />
             </button>
             <a
               href={profile.github}

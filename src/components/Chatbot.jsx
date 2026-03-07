@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import { MessageCircle, X, Send } from 'lucide-react'
+import { MessageCircle, X, Send, Droplets } from 'lucide-react'
+import { useTheme } from '../ThemeContext'
 import data from '../data/chatbot.json'
 
 const normalize = (s) => s.toLowerCase().trim()
 
 const Chatbot = () => {
+  const { setTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState([
@@ -20,11 +22,23 @@ const Chatbot = () => {
     const question = input.trim()
 
     const userMessage = { from: 'user', text: question }
-    const match =
-      data.faqs.find((f) => normalize(f.question) === normalize(question)) ?? null
-    const botMessage = {
-      from: 'bot',
-      text: match ? match.answer : data.fallback,
+    let botMessage = null
+
+    // Check for theme triggers
+    const triggerWords = ['ocean', 'water', 'theme', 'dive']
+    if (triggerWords.some(w => normalize(question).includes(w))) {
+      setTheme('ocean')
+      botMessage = {
+        from: 'bot',
+        text: 'Diving deep! I’ve activated the Ocean theme for you. 🌊',
+      }
+    } else {
+      const match =
+        data.faqs.find((f) => normalize(f.question) === normalize(question)) ?? null
+      botMessage = {
+        from: 'bot',
+        text: match ? match.answer : data.fallback,
+      }
     }
 
     setMessages((prev) => [...prev, userMessage, botMessage])
@@ -52,29 +66,37 @@ const Chatbot = () => {
                 Scripted responses from local JSON
               </p>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="rounded-full p-1 text-gray-500 hover:bg-gray-100 dark:text-foreground-dark/60 dark:hover:bg-white/10"
-              aria-label="Close chat"
-            >
-              <X className="h-4 w-4" />
-            </button>
+            <div className="flex gap-1">
+              <button
+                onClick={() => setTheme('ocean')}
+                className="rounded-full p-1 text-accent-blue hover:bg-accent-blue/10 dark:hover:bg-accent-blue/20"
+                aria-label="Activate Ocean Theme"
+                title="Dive into Ocean Theme"
+              >
+                <Droplets className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="rounded-full p-1 text-gray-500 hover:bg-gray-100 dark:text-foreground-dark/60 dark:hover:bg-white/10"
+                aria-label="Close chat"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
           </div>
 
           <div className="max-h-72 space-y-2 overflow-y-auto px-4 py-3 text-[13px]">
             {messages.map((m, idx) => (
               <div
                 key={idx}
-                className={`flex ${
-                  m.from === 'user' ? 'justify-end' : 'justify-start'
-                }`}
+                className={`flex ${m.from === 'user' ? 'justify-end' : 'justify-start'
+                  }`}
               >
                 <div
-                  className={`max-w-[80%] rounded-2xl px-3 py-2 ${
-                    m.from === 'user'
+                  className={`max-w-[80%] rounded-2xl px-3 py-2 ${m.from === 'user'
                       ? 'bg-accent-blue text-white'
                       : 'bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-foreground-dark'
-                  }`}
+                    }`}
                 >
                   {m.text}
                 </div>

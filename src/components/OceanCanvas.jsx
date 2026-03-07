@@ -63,7 +63,7 @@ const OceanCanvas = () => {
     const ripplesRef = useRef([])
 
     useEffect(() => {
-        if (theme !== 'light') return
+        if (theme !== 'ocean') return
 
         const canvas = canvasRef.current
         if (!canvas) return
@@ -242,7 +242,7 @@ const OceanCanvas = () => {
 
     }, [theme])
 
-    if (theme !== 'light') return null
+    if (theme !== 'ocean') return null
 
     return (
         <canvas

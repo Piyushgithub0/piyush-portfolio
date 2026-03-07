@@ -8,12 +8,15 @@
   --font-display: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', sans-serif;
 
-  --color-background-light: #031424;
-  /* Deep Ocean Base */
+  --color-background-light: #f5f5f5;
   --color-background-dark: #0b0b0b;
-  --color-foreground-light: #cffafe;
-  /* Soft Cyan/White for readability against dark ocean */
+  --color-background-ocean: #031424;
+  /* Deep Ocean Base */
+
+  --color-foreground-light: #111111;
   --color-foreground-dark: #ffffff;
+  --color-foreground-ocean: #cffafe;
+  /* Soft Cyan/White */
 
   --color-accent-blue: #00aeef;
   --color-accent-red: #e31937;
@@ -37,15 +40,252 @@ body {
   color: var(--color-foreground-dark);
 }
 
+.ocean body {
+  background-color: var(--color-background-ocean);
+  color: var(--color-foreground-ocean);
+}
+
 ::selection {
   background-color: color-mix(in srgb, var(--color-accent-blue) 30%, transparent);
   color: var(--color-foreground-dark);
 }
 
+.light-gradient-layer {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(42px);
+  opacity: 0.75;
+  mix-blend-mode: screen;
+}
+
+.light-gradient-layer--blue {
+  width: 60vw;
+  height: 60vw;
+  top: -10%;
+  left: -12%;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(56, 189, 248, 0.9), transparent 60%),
+    radial-gradient(circle at 10% 60%, rgba(37, 99, 235, 0.65), transparent 70%);
+  animation: light-orbit-1 42s ease-in-out infinite alternate;
+}
+
+.light-gradient-layer--violet {
+  width: 55vw;
+  height: 55vw;
+  top: 10%;
+  right: -10%;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(168, 85, 247, 0.8), transparent 60%),
+    radial-gradient(circle at 90% 60%, rgba(244, 114, 182, 0.45), transparent 70%);
+  animation: light-orbit-2 48s ease-in-out infinite alternate;
+}
+
+.light-gradient-layer--teal {
+  width: 70vw;
+  height: 70vw;
+  bottom: -20%;
+  left: -15%;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.75), transparent 65%),
+    radial-gradient(circle at 40% 40%, rgba(45, 212, 191, 0.5), transparent 70%);
+  animation: light-orbit-3 54s ease-in-out infinite alternate;
+}
+
+.light-gradient-layer--orange {
+  width: 65vw;
+  height: 65vw;
+  bottom: -18%;
+  right: -12%;
+  background:
+    radial-gradient(circle at 80% 80%, rgba(251, 146, 60, 0.85), transparent 60%),
+    radial-gradient(circle at 60% 30%, rgba(250, 204, 21, 0.45), transparent 70%);
+  animation: light-orbit-4 60s ease-in-out infinite alternate;
+}
+
+@keyframes light-orbit-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(30px, -40px, 0) scale(1.06);
+  }
+
+  100% {
+    transform: translate3d(-20px, 20px, 0) scale(1.02);
+  }
+}
+
+@keyframes light-orbit-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+
+  50% {
+    transform: translate3d(-40px, 30px, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(20px, -10px, 0) scale(1.03);
+  }
+}
+
+@keyframes light-orbit-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.03);
+  }
+
+  50% {
+    transform: translate3d(40px, 10px, 0) scale(1.1);
+  }
+
+  100% {
+    transform: translate3d(-30px, -20px, 0) scale(1.04);
+  }
+}
+
+@keyframes light-orbit-4 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.03);
+  }
+
+  50% {
+    transform: translate3d(-25px, -30px, 0) scale(1.07);
+  }
+
+  100% {
+    transform: translate3d(15px, 25px, 0) scale(1.02);
+  }
+}
+
+.light-grid-overlay {
+  position: absolute;
+  inset: -10%;
+  background-image:
+    linear-gradient(120deg,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px),
+    linear-gradient(210deg,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px),
+    radial-gradient(circle at top,
+      rgba(255, 255, 255, 0.14),
+      transparent 55%);
+  background-size: 140px 140px, 180px 180px, 100% 100%;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  animation: light-grid-shift 60s linear infinite;
+}
+
+@keyframes light-grid-shift {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  50% {
+    background-position: -60px -40px, 40px 60px, 0 0;
+  }
+
+  100% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+}
+
+.light-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.light-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+  opacity: 0.65;
+  animation: light-particle-float 26s ease-in-out infinite alternate;
+}
+
+.light-particle--1 {
+  top: 18%;
+  left: 20%;
+  animation-duration: 22s;
+  animation-delay: -4s;
+}
+
+.light-particle--2 {
+  top: 32%;
+  right: 18%;
+  animation-duration: 28s;
+  animation-delay: -9s;
+}
+
+.light-particle--3 {
+  top: 52%;
+  left: 32%;
+  animation-duration: 24s;
+  animation-delay: -2s;
+}
+
+.light-particle--4 {
+  top: 64%;
+  right: 30%;
+  animation-duration: 30s;
+  animation-delay: -13s;
+}
+
+.light-particle--5 {
+  bottom: 18%;
+  left: 22%;
+  animation-duration: 26s;
+  animation-delay: -7s;
+}
+
+.light-particle--6 {
+  bottom: 22%;
+  right: 20%;
+  animation-duration: 32s;
+  animation-delay: -15s;
+}
+
+@keyframes light-particle-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate3d(40px, -30px, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(-20px, 30px, 0);
+    opacity: 0.6;
+  }
+}
+
+.light-cursor-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.light-cursor-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--cursor-particle-color);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--cursor-particle-color) 80%, transparent);
+  opacity: 0.9;
+  will-change: transform;
+}
+
 /* ── Ocean Light Mode ────────────────────────────────────────────────────── */
 
 /* Dynamic Depth Gradient Container */
-.ocean-depth-gradient {
+.ocean .ocean-depth-gradient {
   /* Mimic descending into the ocean: lighter at top, very dark at bottom */
   background: linear-gradient(180deg,
       #088395 0%,
@@ -62,8 +302,25 @@ body {
   z-index: -1;
 }
 
-/* Glassmorphism utility applied to UI components in light mode */
-html:not(.dark) .light-glass {
+/* Glassmorphism utility applied to UI components in standard light mode */
+html:not(.dark):not(.ocean) .light-glass {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark):not(.ocean) .light-glass-strong {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism utility applied specifically to Ocean mode */
+html.ocean .light-glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -71,7 +328,7 @@ html:not(.dark) .light-glass {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
-html:not(.dark) .light-glass-strong {
+html.ocean .light-glass-strong {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);

@@ -10,10 +10,11 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const root = document.documentElement
+    root.classList.remove('dark', 'ocean')
     if (theme === 'dark') {
       root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
+    } else if (theme === 'ocean') {
+      root.classList.add('ocean')
     }
     localStorage.setItem('theme', theme)
   }, [theme])
@@ -23,7 +24,7 @@ export const ThemeProvider = ({ children }) => {
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   )
