@@ -13,7 +13,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#f5f5f7] via-white to-[#f0f2f5] px-4 pt-24 text-gray-900 dark:from-background-dark dark:via-[#050505] dark:to-background-dark dark:text-foreground-dark sm:px-6 lg:px-0"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 text-foreground-light dark:bg-gradient-to-b dark:from-background-dark dark:via-[#050505] dark:to-background-dark dark:text-foreground-dark sm:px-6 lg:px-0"
     >
       <div className="pointer-events-none absolute inset-0 opacity-60 mix-blend-screen dark:opacity-70">
         <div className="pointer-events-none absolute -left-32 top-40 h-64 w-64 rounded-full bg-accent-blue/20 blur-3xl" />
@@ -72,8 +72,8 @@ export const Hero = () => {
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
           className="mt-6 w-full max-w-sm md:mt-0"
         >
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] shadow-[0_0_80px_rgba(0,0,0,0.8)] dark:from-white/10 dark:via-white/5 dark:to-transparent">
-            <div className="relative h-full rounded-3xl bg-background-light/90 p-5 dark:bg-[#050505]/90">
+          <div className="relative rounded-3xl border border-white/10 light-glass p-[1px] shadow-[0_0_80px_rgba(0,0,0,0.8)] dark:from-white/10 dark:via-white/5 dark:to-transparent">
+            <div className="relative h-full rounded-3xl light-glass p-5 dark:bg-[#050505]/90">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-foreground-light/60 dark:text-foreground-dark/60">
@@ -88,7 +88,7 @@ export const Hero = () => {
                     src={profileImg}
                     alt="Piyush"
                     className="h-full w-full object-cover"
-                     />
+                  />
                 </div>
               </div>
               <div className="mt-6 space-y-3 text-xs text-foreground-light/70 dark:text-foreground-dark/70">

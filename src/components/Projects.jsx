@@ -28,7 +28,7 @@ const Projects = () => {
             <motion.article
               whileHover={{ y: -6 }}
               transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-              className="group flex flex-col rounded-2xl border border-gray-200 bg-white/80 p-4 text-gray-800 shadow-[0_0_40px_rgba(15,23,42,0.15)] backdrop-blur dark:border-white/10 dark:bg-background-dark/80 dark:text-foreground-dark"
+              className="group flex flex-col rounded-2xl border border-white/10 light-glass hover:light-glass-strong p-4 text-foreground-light shadow-[0_0_40px_rgba(15,23,42,0.15)] dark:border-white/10 dark:bg-background-dark/80 dark:text-foreground-dark"
             >
               <div className="flex-1">
                 <h3 className="font-display text-lg">{project.title}</h3>

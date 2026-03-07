@@ -25,14 +25,14 @@ export const Navbar = ({ activeSection }) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-gray-200 bg-[#f7f7fa]/80 backdrop-blur dark:border-white/5 dark:bg-background-dark/60">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 light-glass dark:bg-background-dark/60">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-0">
         <div
           className="flex cursor-pointer items-center gap-2"
           onClick={() => scrollToSection('hero')}
         >
-         <div className="p-[2px] rounded-full bg-gradient-to-br from-accent-blue to-accent-red">
-        <img
+          <div className="p-[2px] rounded-full bg-gradient-to-br from-accent-blue to-accent-red">
+            <img
               src={profileImg}
               alt="Piyush"
               className="h-8 w-8 rounded-full object-cover"
