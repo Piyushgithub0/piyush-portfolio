@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useTheme } from '../ThemeContext'
+import LightGridCanvas from './LightGridCanvas'
 
 const CURSOR_PARTICLES = [
   { x: 18, y: 26, color: 'rgba(56, 189, 248, 0.9)' },
@@ -135,6 +136,7 @@ const LightModeBackground = () => {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-20 overflow-hidden">
+      <LightGridCanvas />
       <div
         ref={containerRef}
         className="absolute inset-[-20%] transition-transform duration-300 ease-out"
