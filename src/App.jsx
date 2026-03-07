@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
 import { useActiveSection } from './hooks/useActiveSection'
+import InteractiveBackground from './components/InteractiveBackground'
 
 function App() {
   const sectionIds = [
@@ -26,20 +27,23 @@ function App() {
   const activeSection = useActiveSection(sectionIds)
 
   return (
-    <div className="min-h-screen bg-[#f5f5f7] text-gray-800 dark:bg-background-dark dark:text-foreground-dark">
-      <Navbar activeSection={activeSection} />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Projects />
-        <Experiments />
-        <Skills />
-        <Certifications />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-      <Chatbot />
+    <div className="relative min-h-screen bg-[#0b0b0b] text-gray-800 dark:bg-background-dark dark:text-foreground-dark">
+      <InteractiveBackground />
+      <div className="relative z-10">
+        <Navbar activeSection={activeSection} />
+        <main className="pt-16">
+          <Hero />
+          <About />
+          <Projects />
+          <Experiments />
+          <Skills />
+          <Certifications />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+        <Chatbot />
+      </div>
     </div>
   )
 }
