@@ -3,8 +3,8 @@
   "projects": [
     {
       "id": "control-center",
-      "title": "Developer Control Center",
-      "description": "A unified dashboard for monitoring builds, deployments, and observability in real time.",
+      "title": "DataMind-Hackathon-Project",
+      "description": "Conversational Data Intelligence Platform: A system that lets users ask questions in natural language and get accurate insights directly from structured data sources.",
       "technologies": ["React", "Vite", "Tailwind", "TypeScript"],
       "github": "https://github.com/your-username/dev-control-center",
       "demo": "https://dev-control-center.vercel.app"
