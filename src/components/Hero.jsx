@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import profile from '../data/profile.json'
 import profileImg from "../assets/profile.jpg"
+import MagneticElement from './MagneticElement'
 
 export const Hero = () => {
   const handleScrollToProjects = () => {
@@ -42,21 +43,25 @@ export const Hero = () => {
             {profile.bio}
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              onClick={handleScrollToProjects}
-              className="group relative overflow-hidden rounded-full border border-accent-blue/40 bg-accent-blue px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-background-dark shadow-[0_0_40px_rgba(0,174,239,0.6)] transition-transform hover:-translate-y-0.5"
-            >
-              <span className="relative z-10">View Projects</span>
-              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-white/40 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
-            </button>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-foreground-light/80 transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark/80"
-            >
-              GitHub
-            </a>
+            <MagneticElement strength={16}>
+              <button
+                onClick={handleScrollToProjects}
+                className="group relative overflow-hidden rounded-full border border-accent-blue/40 bg-accent-blue px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-background-dark shadow-[0_0_40px_rgba(0,174,239,0.6)] transition-transform hover:-translate-y-0.5"
+              >
+                <span className="relative z-10">View Projects</span>
+                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-white/40 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+              </button>
+            </MagneticElement>
+            <MagneticElement strength={10}>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-foreground-light/80 transition-colors hover:border-accent-blue hover:text-accent-blue dark:text-foreground-dark/80"
+              >
+                GitHub
+              </a>
+            </MagneticElement>
           </div>
         </motion.div>
 

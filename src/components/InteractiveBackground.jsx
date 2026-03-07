@@ -37,6 +37,13 @@ const InteractiveBackground = () => {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
+    // In light mode we let a separate light-mode background take over.
+    // Keep the existing visuals and behavior exactly for dark mode.
+    if (theme !== 'dark') {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      return
+    }
+
     const resize = () => {
       const { innerWidth, innerHeight, devicePixelRatio } = window
       const dpr = Math.min(devicePixelRatio || 1, 2)

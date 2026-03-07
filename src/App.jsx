@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
 import { useActiveSection } from './hooks/useActiveSection'
 import InteractiveBackground from './components/InteractiveBackground'
+import LightModeBackground from './components/LightModeBackground'
 
 function App() {
   const sectionIds = [
@@ -27,8 +28,9 @@ function App() {
   const activeSection = useActiveSection(sectionIds)
 
   return (
-    <div className="relative min-h-screen bg-[#0b0b0b] text-gray-800 dark:bg-background-dark dark:text-foreground-dark">
+    <div className="relative min-h-screen bg-background-light text-foreground-light dark:bg-background-dark dark:text-foreground-dark">
       <InteractiveBackground />
+      <LightModeBackground />
       <div className="relative z-10">
         <Navbar activeSection={activeSection} />
         <main className="pt-16">

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Github, ExternalLink } from 'lucide-react'
 import data from '../data/projects.json'
+import MagneticElement from './MagneticElement'
 
 const Projects = () => {
   return (
@@ -23,51 +24,56 @@ const Projects = () => {
         className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
       >
         {data.projects.map((project) => (
-          <motion.article
-            key={project.id}
-            whileHover={{ y: -6 }}
-            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-            className="group flex flex-col rounded-2xl border border-gray-200 bg-white/80 p-4 text-gray-800 shadow-[0_0_40px_rgba(15,23,42,0.15)] backdrop-blur dark:border-white/10 dark:bg-background-dark/80 dark:text-foreground-dark"
-          >
-            <div className="flex-1">
-              <h3 className="font-display text-lg">{project.title}</h3>
-              <p className="mt-2 text-xs text-foreground-light/70 dark:text-foreground-dark/70">
-                {project.description}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-gray-200 bg-gray-50 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-gray-500 transition-colors group-hover:border-accent-blue group-hover:text-accent-blue dark:border-white/10 dark:bg-background-dark/60 dark:text-foreground-dark/60"
-                  >
-                    {tech}
-                  </span>
-                ))}
+          <MagneticElement strength={10} key={project.id}>
+            <motion.article
+              whileHover={{ y: -6 }}
+              transition={{ type: 'spring', stiffness: 220, damping: 18 }}
+              className="group flex flex-col rounded-2xl border border-gray-200 bg-white/80 p-4 text-gray-800 shadow-[0_0_40px_rgba(15,23,42,0.15)] backdrop-blur dark:border-white/10 dark:bg-background-dark/80 dark:text-foreground-dark"
+            >
+              <div className="flex-1">
+                <h3 className="font-display text-lg">{project.title}</h3>
+                <p className="mt-2 text-xs text-foreground-light/70 dark:text-foreground-dark/70">
+                  {project.description}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-gray-200 bg-gray-50 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-gray-500 transition-colors group-hover:border-accent-blue group-hover:text-accent-blue dark:border-white/10 dark:bg-background-dark/60 dark:text-foreground-dark/60"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="mt-4 flex items-center justify-between text-xs">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-full border border-gray-200 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-gray-700 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark/70"
-              >
-                <Github className="h-3 w-3" />
-                GitHub
-              </a>
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.18em] text-gray-500 transition-colors hover:text-accent-blue dark:text-foreground-dark/60"
-                >
-                  <ExternalLink className="h-3 w-3" />
-                  Live demo
-                </a>
-              )}
-            </div>
-          </motion.article>
+              <div className="mt-4 flex items-center justify-between text-xs">
+                <MagneticElement strength={8}>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 rounded-full border border-gray-200 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-gray-700 transition-colors hover:border-accent-blue hover:text-accent-blue dark:border-white/10 dark:text-foreground-dark/70"
+                  >
+                    <Github className="h-3 w-3" />
+                    GitHub
+                  </a>
+                </MagneticElement>
+                {project.demo && (
+                  <MagneticElement strength={8}>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.18em] text-gray-500 transition-colors hover:text-accent-blue dark:text-foreground-dark/60"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                      Live demo
+                    </a>
+                  </MagneticElement>
+                )}
+              </div>
+            </motion.article>
+          </MagneticElement>
         ))}
       </motion.div>
     </section>
